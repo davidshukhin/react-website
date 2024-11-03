@@ -1,8 +1,10 @@
 import React from 'react';
-import { Menu, CircleUser, Moon, Wind, Brain, PlayCircle } from 'lucide-react';
+import { Menu, CircleUser, Moon, Wind, Brain, PlayCircle, TestTube } from 'lucide-react';
 import Navbar from './components/Navbar';
 import PricingCard from './components/PricingCard';
 import FeatureCard from './components/FeatureCard';
+import TestimonialCard from './components/TestimonialCard';
+import TestimonialsSection from './components/TestimonialSection';
 
 function App() {
   return (
@@ -17,8 +19,8 @@ function App() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 py-16">
-          <div className="flex-1 space-y-8">
-            <h1 className="text-5xl font-bold text-gray-800">
+          <div className="flex-1 space-y-8 justify-center items-center">
+            <h1 className="text-center text-5xl font-bold text-gray-800">
               Your everyday mental health app
             </h1>
             <p className="text-xl text-gray-600">Find some headspace:</p>
@@ -91,7 +93,7 @@ function App() {
           </div>
         </div>
 
-        <div className="py-20 space-y-16">
+        <div className=" flex-1 py-20 space-y-16 items-center justify-center">
           <FeatureCard
             icon={<Brain className="w-12 h-12 text-orange-500" />}
             title="Everything your mind needs"
@@ -109,6 +111,13 @@ function App() {
             title="Get the sleep of your dreams"
             description="Sleep more soundly every night with bedtime meditations, exercises, and relaxing sounds."
           />
+        </div>
+
+        <div>
+          {/* <h1  className="text-center text-5xl font-bold text-gray-800">Headspace Stories</h1> */}
+          <div className="flext-1">
+          <TestimonialsSection />
+          </div>
         </div>
       </main>
     </div>
