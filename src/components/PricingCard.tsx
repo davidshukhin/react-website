@@ -2,43 +2,57 @@ import React from 'react';
 import { Check } from 'lucide-react';
 
 interface PricingCardProps {
-  type: string;
+  type: 'Annual' | 'Monthly';
   price: string;
   trial: number;
   isPopular?: boolean;
   yearlyPrice?: string;
+  isSelected: boolean;
+  onSelect: () => void;
 }
 
-const PricingCard: React.FC<PricingCardProps> = ({ type, price, trial, isPopular, yearlyPrice }) => {
+function PricingCard({ 
+  type, 
+  price, 
+  trial, 
+  isPopular, 
+  yearlyPrice,
+  isSelected,
+  onSelect 
+}: PricingCardProps) {
   return (
-    <div className={`border rounded-lg p-6 ${isPopular ? 'bg-[#FFF7D6]' : 'bg-white'}`}>
-      <div className="flex justify-between items-start">
-        <div>
-          <p className="text-gray-600">{type}</p>
-          {yearlyPrice && (
-            <p className="text-sm text-gray-500">billed at ${yearlyPrice} USD/yr</p>
-          )}
-        </div>
-        {isPopular && (
-          <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
-            Best value
-          </span>
-        )}
-      </div>
-      
-      <div className="mt-4">
-        <p className="text-2xl font-bold">{trial} days free</p>
-        <p className="mt-1 text-gray-600">${price} USD/month</p>
-      </div>
-
+    <div 
+      onClick={onSelect}
+      className={`
+        relative p-6 rounded-2xl cursor-pointer transition-all
+        ${isSelected ? 
+          'bg-orange-500 text-white ring-4 ring-white' : 
+          'bg-white text-black hover:ring-2 hover:ring-orange-500/50'
+        }
+      `}
+    >
       {isPopular && (
-        <div className="mt-4 flex items-center text-blue-600">
-          <Check className="w-5 h-5 mr-2" />
-          <span className="text-sm">Selected</span>
+        <div className="absolute -top-3 left-6 bg-white text-black text-sm px-3 py-1 rounded-full">
+          Best value
         </div>
       )}
+      
+      <div className="flex justify-between items-start">
+        <div>
+          <div className="text-sm mb-1">
+            {type === 'Annual' ? `${type} - billed at $${yearlyPrice} USD/yr` : type}
+          </div>
+          <div className="text-2xl font-bold mb-1">{trial} days free</div>
+          <div className="text-xl">${price} USD/month</div>
+        </div>
+        <div className={`w-6 h-6 rounded-full border-2 ${isSelected ? 'border-white' : 'border-black'} flex items-center justify-center`}>
+          {isSelected && (
+            <div className={`w-3 h-3 rounded-full ${isSelected ? 'bg-white' : 'bg-black'}`} />
+          )}
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default PricingCard;
