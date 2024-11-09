@@ -9,6 +9,8 @@ import ArticleDisplay from './components/ArticleDisplay';
 import StatsDisplay from './components/StatsDisplay';
 import PricingSection from './components/PricingSection';
 import Footer from './components/Footer';
+import FeatureSection from './components/FeatureSection';
+import MeetEbb from './components/MeetEbb';
 import { heroleft, heroright } from '../constants/images';
 function App() {
   const [selectedPlan, setSelectedPlan] = useState<'Annual' | 'Monthly'>('Annual');
@@ -88,6 +90,13 @@ function App() {
             </div>
           </div>
         </div>
+
+        {/* Feature Section */}
+        <FeatureSection />
+        <MeetEbb />
+
+        {/* Pricing Section */}
+    
 
         {/* Rest of the components */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
