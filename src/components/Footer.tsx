@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       {/* Curved Separator - Upward Curve */}
-      <div className="bg-[#2F2F2F] relative">
+      <div className="bg-[#ccc5c5] relative">
         <svg
           viewBox="0 0 1440 96"
           fill="none"
@@ -20,7 +20,7 @@ function Footer() {
         </svg>
       </div>
 
-      <footer className="bg-[#2F2F2F] px-4 py-16">
+      <footer className="bg-[#ccc5c5] px-4 py-16">
         <div className="max-w-7xl mx-auto">
           {/* Newsletter Section */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-20">
