@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -15,27 +16,29 @@ const Navbar = () => {
               <div className="h-8 w-8 bg-[#FF8E4F] rounded-full flex items-center justify-center">
                 <div className="w-4 h-4 bg-white rounded-full" />
               </div>
+              <Link to="/">
               <span className="ml-2 text-xl font-semibold text-gray-900">headspace</span>
+              </Link>
             </div>
           </div>
 
           {/* Right side - Navigation links */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a href="#" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            <Link to="/plans" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
               Plans
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            </Link>
+            <Link to="/business" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
               For business
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            </Link>
+            <Link to="/about" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
               About
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            </Link>
+            <Link to="/help" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
               Help
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            </Link>
+            <Link to="/login" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
               Log in
-            </a>
+            </Link>
             <button className="bg-[#3366FF] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-blue-600 transition-colors">
               Try for free
             </button>
